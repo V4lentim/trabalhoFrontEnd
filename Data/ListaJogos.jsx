@@ -4,8 +4,8 @@ export const ListaJogos = [
         nome: "Gta V",
         tipo: ["Mundo aberto"],
         descricao: "Três criminosos com histórias distintas cruzam seus caminhos em um esquema de assaltos perigosos para sobreviverem e prosperarem na satírica e caótica cidade de Los Santos.",
-        imagem: "https://s2-techtudo.glbimg.com/emive1thVR6x2SyhvaOZ5_kR-EY=/0x0:300x371/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/1/9/8cOmg9TkaB2PgkS1sUjQ/2013-04-02-gta5-capa-rockstar-.jpg"
-
+        imagem: "https://s2-techtudo.glbimg.com/emive1thVR6x2SyhvaOZ5_kR-EY=/0x0:300x371/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/1/9/8cOmg9TkaB2PgkS1sUjQ/2013-04-02-gta5-capa-rockstar-.jpg",
+        
     },
 
     {
