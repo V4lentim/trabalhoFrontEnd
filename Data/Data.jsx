@@ -1,4 +1,4 @@
-export const ListaJogos = [
+export const Data = [
     {
         id: 1,
         nome: "Gta V",

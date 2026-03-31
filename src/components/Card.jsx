@@ -1,10 +1,10 @@
-import { ListaJogos } from "../../Data/ListaJogos";
+import { Data } from "../../Data/Data";
 
 export const Card = (props) => {
 
     return (
         <>
-            <div className="group bg-[#1a1c22] border border-[#2d3038] rounded-xl overflow-hidden shadow-lg transition-all duration-500 hover:border-purple-500 w-full flex flex-col h-full hover:scale-[1.02]">
+            <div className="group bg-[#1a1c22] border border-[#2d3038] rounded-xl overflow-hidden shadow-lg transition-all duration-500 hover:border-purple-500 w-full flex flex-col h-full hover:scale-[1.02] ">
                 <div className="p-5 flex flex-col flex-grow transition-all duration-500 ease-in-out">
                     <h4 className="text-gray-100 text-xl font-bold truncate mb-2 uppercase tracking-wider shrink-0">{props.nome}</h4>
                 </div>
