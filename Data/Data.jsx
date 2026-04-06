@@ -164,10 +164,10 @@ function Data() {
 
         {
             id: 18,
-            nome: "The Elder Scroll V: Skyrim",
+            nome: "The Elder Scroll V: Skyrim Anniversary Edition",
             tipo: ["RPG", "Mundo Aberto"],
             descricao: "Você é o Dragonborn (Dovahkiin), um herói profetizado com o poder de absorver almas de dragões, e deve explorar a província gelada de Skyrim para impedir que o dragão Alduin destrua o mundo, enquanto se envolve em uma guerra civil e inúmeras facções.",
-            imagem: "https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fstore.epicgames.com%2Fpt-BR%2Fp%2Fskyrim&ved=0CBYQjRxqFwoTCOjbo8_zvZMDFQAAAAAdAAAAABAI&opi=89978449"
+            imagem: "https://assets.nuuvem.com/image/upload/t_boxshot_big/v1/products/58177867d27734555b00015d/boxshots/mxvu04wbrs6uvms9jcgq.jpg"
 
         },
 
