@@ -16,8 +16,6 @@ export const Header = (props) => {
                 <img src={logo} alt="KeyDash-Logo" className="h-20 w-40" />
             </div>
 
-            <BarraDePesquisa  setData={props.setData} />
-
             <div className="flex gap-5   text-x1">
                 <button>❤️</button>
                 <button>🛒</button>

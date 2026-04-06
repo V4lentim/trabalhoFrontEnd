@@ -28,8 +28,7 @@ export const BotaoCategoria = (props) => {
   ];
 
   function handleGenero(generoClicado) {
-    const itens = Data(); // seu Data é função
-
+    const itens = Data(); 
     if (generoClicado === "Todos") {
       props.setData(itens);
     } else {
@@ -42,12 +41,11 @@ export const BotaoCategoria = (props) => {
       props.setData(categoriaFiltrada);
     }
 
-    setOpen(false); // fecha menu
+    setOpen(false); 
   }
 
   return (
     <>
-      {/* BOTÃO ABRIR */}
       <button
         onClick={() => setOpen(!open)}
         className="text-white bg-purple-700 px-4 py-2 rounded"
@@ -55,7 +53,6 @@ export const BotaoCategoria = (props) => {
         ☰ Categorias
       </button>
 
-      {/* SIDEBAR */}
       <div
         className={`fixed top-0 left-0 h-full w-64 bg-[#1A1A1A] shadow-lg transform transition-transform duration-300 z-50
         ${open ? "translate-x-0" : "-translate-x-full"}`}
@@ -77,7 +74,6 @@ export const BotaoCategoria = (props) => {
         </div>
       </div>
 
-      {/* OVERLAY (FUNDO ESCURO) */}
       {open && (
         <div
           className="fixed inset-0 bg-black/50 z-40"
