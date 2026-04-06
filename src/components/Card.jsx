@@ -1,7 +1,5 @@
-import { Data } from "../../Data/Data";
-
 export const Card = (props) => {
-
+  
     return (
         <>
             <div className="group bg-[#1a1c22] border border-[#2d3038] rounded-xl overflow-hidden shadow-lg transition-all duration-500 hover:border-purple-500 w-full flex flex-col h-full hover:scale-[1.02] ">
