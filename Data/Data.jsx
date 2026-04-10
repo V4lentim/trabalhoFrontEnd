@@ -3,7 +3,7 @@ function Data() {
         {
             id: 1,
             nome: "Gta V",
-            tipo: ["Mundo aberto"],
+            tipo: ["Mundo Aberto"],
             descricao: "Três criminosos com histórias distintas cruzam seus caminhos em um esquema de assaltos perigosos para sobreviverem e prosperarem na satírica e caótica cidade de Los Santos.",
             imagem: "https://s2-techtudo.glbimg.com/emive1thVR6x2SyhvaOZ5_kR-EY=/0x0:300x371/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/1/9/8cOmg9TkaB2PgkS1sUjQ/2013-04-02-gta5-capa-rockstar-.jpg",
 
@@ -220,7 +220,7 @@ function Data() {
             id: 24,
             nome: "Devil May Cry HD Colection",
             tipo: ["Hack 'n Slash"],
-            descricao: "Esta coletânea reúne os três primeiros capítulos da saga de Dante, o lendário caçador de demônios: o clássico original que definiu o gênero, a sequência experimental em mundo mais aberto e a prequela aclamada que foca na rivalidade épica com seu irmão Vergil.",
+            descricao: "Esta coletânea reúne os três primeiros capítulos da saga de Dante, o lendário caçador de demônios: o clássico original que definiu o gênero, a sequência experimental em mundo mais Aberto e a prequela aclamada que foca na rivalidade épica com seu irmão Vergil.",
             imagem: "https://fanatical.imgix.net/product/original/6621e439-fe72-458d-abdd-cb720aeeeb91.jpeg?auto=compress,format&w=870&fit=crop&h=489"
 
         },

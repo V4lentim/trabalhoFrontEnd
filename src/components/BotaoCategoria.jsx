@@ -1,8 +1,11 @@
 import { useState } from "react";
 import Data from "../../Data/Data";
 
+export let gn = "Todos"
+
 export const BotaoCategoria = (props) => {
   const [open, setOpen] = useState(false);
+
 
   const genero = [
     "Todos",
@@ -27,21 +30,20 @@ export const BotaoCategoria = (props) => {
     "Ficção Científica",
   ];
 
-  function handleGenero(generoClicado) {
-    const itens = Data(); 
-    if (generoClicado === "Todos") {
-      props.setData(itens);
+  function handleGenero(generoClicada) {
+    const todosOsItens = Data();
+
+    if (generoClicada === "Todos") {
+      gn = "Todos"
+      props.setData(todosOsItens);
     } else {
-      const categoriaFiltrada = itens.filter((item) =>
-        item.tipo.some((tipo) =>
-          tipo.toLowerCase() === generoClicado.toLowerCase()
-        )
-      );
-
-      props.setData(categoriaFiltrada);
+      const itensFiltrados = todosOsItens.filter((item) => {
+        gn = generoClicada
+        return item.tipo.includes(generoClicada);
+      });
+      props.setData(itensFiltrados);
     }
-
-    setOpen(false); 
+    setOpen(false);
   }
 
   return (

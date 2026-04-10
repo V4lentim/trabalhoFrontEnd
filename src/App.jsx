@@ -9,6 +9,8 @@ function App() {
 
   const [data, setData] = useState([])
 
+
+
   useEffect(() => {
     setData(Data())
     document.title = "Keydash";
@@ -16,24 +18,23 @@ function App() {
 
   return (
     <>
-      <div className='bg-[#111215] min-h-screen p-8'>
+      <div className='bg-[#111215] min-h-screen'>
         <Header setData={setData} />
 
-        <br />
-        <br />
-
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10'>
-          {data.map((jogo) => {
-            return (
-              <Card
-                key={jogo.id}
-                nome={jogo.nome}
-                imagem={jogo.imagem}
-                descricao={jogo.descricao}
-                tipo={jogo.tipo.join(" / ")}
-              />
-          )
-          })}
+        <div className='p-8'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10'>
+            {data.map((jogo) => {
+              return (
+                <Card
+                  key={jogo.id}
+                  nome={jogo.nome}
+                  imagem={jogo.imagem}
+                  descricao={jogo.descricao}
+                  tipo={jogo.tipo.join(" / ")}
+                />
+              )
+            })}
+          </div>
         </div>
 
         <Footer />

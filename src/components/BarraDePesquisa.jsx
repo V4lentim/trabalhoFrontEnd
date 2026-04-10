@@ -1,20 +1,43 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Data from "../../Data/Data";
+import { gn } from "./BotaoCategoria";
+
 
 export const BarraDePesquisa = (props) => {
 
     const [search, setSearch] = useState('')
 
-    function handleOnSubmit(e) {
+    useEffect(() => {
 
-        e.preventDefault()
         const items = Data();
-        const results = items.filter(item => item.nome.toLowerCase().indexOf(search) !== -1);
+        const results = items.filter((item) => {
+            if (gn == "Todos") {
+                return item.nome.toLowerCase().indexOf(search) !== -1
+            } else {
+                return item.nome.toLowerCase().indexOf(search) !== -1 && item.tipo.includes(gn)
+            }
+        });
         props.setData(results);
-    }
+    }, [search]);
+
 
     function handleSearchChange(e) {
         setSearch(e.target.value.toLowerCase())
+    }
+
+    function handleOnSubmit(e) {
+        e.preventDefault()
+        setSearch(e.target.value.toLowerCase());
+        const itens = Data();
+        const results = itens.filter((item) => {
+            if (gn == "Todos") {
+                return item.nome.toLowerCase().indexOf(setSearch) !== -1
+            } else {
+                return item.nome.toLowerCase().indexOf(search) !== -1 && item.tipo.includes(gn)
+            }
+
+        });
+        props.setData(results);
     }
 
     return (
