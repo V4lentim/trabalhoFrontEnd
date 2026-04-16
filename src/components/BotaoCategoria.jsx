@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Data from "../../Data/Data";
+import { Genero } from "./Genero";
 
 export let gn = [];
 
@@ -7,27 +8,7 @@ export const BotaoCategoria = (props) => {
   const [open, setOpen] = useState(false);
   const [selecionados, setSelecionados] = useState([]);
 
-  const genero = [
-    "Mundo Aberto",
-    "Sandbox",
-    "Survival Horror",
-    "Life Simulator",
-    "Ação",
-    "Aventura",
-    "Plataforma",
-    "RPG",
-    "JRPG",
-    "Sobrevivência",
-    "Key",
-    "Exploração",
-    "Hack 'n Slash",
-    "Stealth Action",
-    "Terror Psicológico",
-    "J-Horror",
-    "Action RPG",
-    "Soulslike",
-    "Ficção Científica",
-  ];
+
 
   function handleCheckbox(gen) {
     let novosSelecionados;
@@ -88,7 +69,7 @@ export const BotaoCategoria = (props) => {
         </div>
 
         <div className="flex flex-col overflow-y-auto max-h-[calc(100vh-140px)]">
-          {genero.map((gen) => (
+          {Genero.map((gen) => (
             <label
               key={gen}
               className="flex items-center gap-2 text-white px-4 py-3 hover:bg-purple-800 transition cursor-pointer"
