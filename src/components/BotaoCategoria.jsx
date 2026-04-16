@@ -1,14 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Data from "../../Data/Data";
 
-export let gn = "Todos"
+export let gn = [];
 
 export const BotaoCategoria = (props) => {
   const [open, setOpen] = useState(false);
-
+  const [selecionados, setSelecionados] = useState([]);
 
   const genero = [
-    "Todos",
     "Mundo Aberto",
     "Sandbox",
     "Survival Horror",
@@ -30,27 +29,43 @@ export const BotaoCategoria = (props) => {
     "Ficção Científica",
   ];
 
-  function handleGenero(generoClicada) {
+  function handleCheckbox(gen) {
+    let novosSelecionados;
+
+    if (selecionados.includes(gen)) {
+      novosSelecionados = selecionados.filter((g) => g !== gen);
+    } else {
+      novosSelecionados = [...selecionados, gen];
+    }
+
+    gn = novosSelecionados;
+    setSelecionados(novosSelecionados);
+  }
+
+  function limparFiltros() {
+    gn = [];
+    setSelecionados([]);
+  }
+
+  useEffect(() => {
     const todosOsItens = Data();
 
-    if (generoClicada === "Todos") {
-      gn = "Todos"
+    if (selecionados.length === 0) {
       props.setData(todosOsItens);
     } else {
-      const itensFiltrados = todosOsItens.filter((item) => {
-        gn = generoClicada
-        return item.tipo.includes(generoClicada);
-      });
-      props.setData(itensFiltrados);
+      const filtrados = todosOsItens.filter((item) =>
+        selecionados.some((gen) => item.tipo.includes(gen))
+      );
+
+      props.setData(filtrados);
     }
-    setOpen(false);
-  }
+  }, [selecionados]);
 
   return (
     <>
       <button
         onClick={() => setOpen(!open)}
-        className="text-white bg-purple-700 px-4 py-2 rounded"
+        className="text-white bg-purple-700 px-4 py-2 rounded transition-all duration-300 hover:bg-purple-800 hover:scale-105"
       >
         ☰ Categorias
       </button>
@@ -63,15 +78,29 @@ export const BotaoCategoria = (props) => {
           Categorias
         </h2>
 
-        <div className="flex flex-col">
+        <div className="p-4">
+          <button
+            onClick={limparFiltros}
+            className="w-full text-white bg-purple-600 py-2 rounded transition-all duration-300 hover:bg-purple-700 hover:scale-[1.02]"
+          >
+            Limpar filtros
+          </button>
+        </div>
+
+        <div className="flex flex-col overflow-y-auto max-h-[calc(100vh-140px)]">
           {genero.map((gen) => (
-            <button
+            <label
               key={gen}
-              onClick={() => handleGenero(gen)}
-              className="text-white text-left px-4 py-3 hover:bg-purple-800 transition"
+              className="flex items-center gap-2 text-white px-4 py-3 hover:bg-purple-800 transition cursor-pointer"
             >
+              <input
+                type="checkbox"
+                checked={selecionados.includes(gen)}
+                onChange={() => handleCheckbox(gen)}
+                className="accent-purple-600"
+              />
               {gen}
-            </button>
+            </label>
           ))}
         </div>
       </div>
