@@ -8,17 +8,13 @@ export const BotaoCategoria = (props) => {
   const [open, setOpen] = useState(false);
   const [selecionados, setSelecionados] = useState([]);
 
-
-
   function handleCheckbox(gen) {
     let novosSelecionados;
-
     if (selecionados.includes(gen)) {
       novosSelecionados = selecionados.filter((g) => g !== gen);
     } else {
       novosSelecionados = [...selecionados, gen];
     }
-
     gn = novosSelecionados;
     setSelecionados(novosSelecionados);
   }
@@ -30,14 +26,12 @@ export const BotaoCategoria = (props) => {
 
   useEffect(() => {
     const todosOsItens = Data();
-
     if (selecionados.length === 0) {
       props.setData(todosOsItens);
     } else {
       const filtrados = todosOsItens.filter((item) =>
-        selecionados.some((gen) => item.tipo.includes(gen))
+        selecionados.every((gen) => item.tipo.includes(gen))
       );
-
       props.setData(filtrados);
     }
   }, [selecionados]);

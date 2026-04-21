@@ -4,6 +4,7 @@ import Data from '../Data/Data'
 import { Card } from './components/Card'
 import './App.css'
 import { Footer } from './components/Footer'
+import { RenderizarCard } from './components/RenderizarCard'
 
 function App() {
 
@@ -23,17 +24,7 @@ function App() {
 
         <div className='p-8'>
           <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10'>
-            {data.map((jogo) => {
-              return (
-                <Card
-                  key={jogo.id}
-                  nome={jogo.nome}
-                  imagem={jogo.imagem}
-                  descricao={jogo.descricao}
-                  tipo={jogo.tipo.join(" / ")}
-                />
-              )
-            })}
+           <RenderizarCard data={data} />
           </div>
         </div>
 
