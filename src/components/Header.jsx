@@ -20,6 +20,9 @@ export const Header = (props) => {
                 <button>🛒</button>
                 <button>👤</button>
             </div>
+            <div className="bg-[white]">
+                <p>Favoritos:</p>
+            </div>
         </header>
     )
 }

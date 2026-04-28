@@ -17,5 +17,6 @@ export const Genero = [
   "Sobrevivência",
   "Soulslike",
   "Stealth Action",
-  "Survival Horror"
+  "Survival Horror",
+  "Favoritos"
 ];

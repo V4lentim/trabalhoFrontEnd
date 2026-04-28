@@ -1,4 +1,8 @@
+import { useState } from "react";
 export const Card = (props) => {
+
+  const [favoritos, setFavoritos] = useState(false);
+
   return (
     <>
       <div className="bg-[#1a1c22] border border-[#2d3038] rounded-xl overflow-hidden shadow-lg w-full flex flex-col h-full hover:border-purple-500 transition-colors">
@@ -41,6 +45,10 @@ export const Card = (props) => {
             <button className="w-full bg-purple-600 hover:bg-purple-700 text-white text-xs py-2.5 rounded-lg font-bold transition-colors">
                 ADQUIRIR AGORA
             </button>
+            <button onClick={() => setFavoritos(!favoritos)} className="w-full bg-purple-600 hover:bg-purple-700 text-white text-xs py-2.5 rounded-lg font-bold transition-colors">
+                FAVORITAR
+            </button>
+
           </div>
           
         </div>

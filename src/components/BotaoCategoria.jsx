@@ -7,6 +7,7 @@ export let gn = [];
 export const BotaoCategoria = (props) => {
   const [open, setOpen] = useState(false);
   const [selecionados, setSelecionados] = useState([]);
+  
 
   function handleCheckbox(gen) {
     let novosSelecionados;
